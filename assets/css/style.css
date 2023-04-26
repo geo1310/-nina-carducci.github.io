@@ -149,8 +149,7 @@ body {
 	font-family: 'Spectral',sans-serif;
 	font-style: italic;
 	font-weight: 300;
-	font-size: calc(1.3rem + .6vw);
-
+	font-size: calc(1.3rem + .6vw)
 }
 .quote__author {
 	font-family: 'Spectral',sans-serif;
