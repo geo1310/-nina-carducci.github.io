@@ -120,12 +120,17 @@
       $(`#${lightboxId}`).modal("toggle");
     },
     prevImage() {
+
+      // On identifie l'image affichee dans la modale pour affecter activeImage
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
           activeImage = $(this);
         }
       });
+      //
+
+      // Création de la liste des photos à afficher dans la modale par rapport au filtre actif
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
       let imagesCollection = [];
       if (activeTag === "all") {
@@ -145,6 +150,7 @@
           }
         });
       }
+
       let index = 0,
         next = null;
 
@@ -159,12 +165,17 @@
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     nextImage() {
+
+      // On identifie l'image affichee dans la modale pour affecter activeImage
       let activeImage = null;
       $("img.gallery-item").each(function() {
         if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
           activeImage = $(this);
         }
       });
+      
+
+      // Création de la liste des photos à afficher dans la modale par rapport au filtre actif
       let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
       let imagesCollection = [];
       if (activeTag === "all") {
@@ -184,6 +195,8 @@
           }
         });
       }
+      
+      //
       let index = 0,
         next = null;
 
@@ -195,6 +208,7 @@
       next = imagesCollection[index] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
+    
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
         lightboxId ? lightboxId : "galleryLightbox"
