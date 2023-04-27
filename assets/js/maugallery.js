@@ -149,11 +149,18 @@
         next = null;
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i-1 ;
+          index = i ;
         }
       });
+      
+      /* bug No2 le choix de l'index suivant n'est pas incréménté, on reste sur le meme index
       next =
-        imagesCollection[index] ||
+      imagesCollection[index] ||
+      imagesCollection[imagesCollection.length - 1];
+      */
+     // bug No2 correction , si l'index précédent n'existe pas on renvoie vers la derniere photo//
+      next =
+        imagesCollection[index-1] ||
         imagesCollection[imagesCollection.length - 1];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
@@ -188,10 +195,15 @@
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i+1;
+          index = i;
         }
       });
+
+      /* bug No2 le choix de l'index suivant n'est pas incréménté, on reste sur le meme index
       next = imagesCollection[index] || imagesCollection[0];
+      */
+     // bug No2 correction , si l'index suivant  n'existe pas on renvoie vers la premiere photo//
+      next = imagesCollection[index+1] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
@@ -234,13 +246,21 @@
         console.error(`Unknown tags position: ${position}`);
       }
     },
+
+    // Selection du filtre actif
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
         return;
       }
+
+      //Bug No 1
+      // retire la classe active-tag à tous les elements qui la possede et mets un fond blanc
       $(".active-tag")
         .css({"background-color": "#fff"})
         .removeClass("active active-tag");
+
+      //Bug No 1
+      // ajoute la classe active-tag à l'element dselectionné et un fond vert
       $(this)
         .addClass("active-tag")
         .css({"background-color": "#beb45a"});
