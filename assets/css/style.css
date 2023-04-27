@@ -13,7 +13,7 @@
 	font-display: swap;
   }
 body {
-	max-width: 1920px;
+	max-width: 1200px;
 	margin: auto;
 }
 * {
@@ -27,7 +27,6 @@ body {
 	z-index: 1000;
 	display: flex;
 	justify-content: space-between;
-	padding-inline: 100px;
 	padding-block: 30px;
 	align-items: center;
 }
@@ -52,6 +51,7 @@ body {
 
 .social-link img {
 	width: 20px;
+	height: auto;
 }
 #about {
 	display: flex;
@@ -172,7 +172,7 @@ body {
 	z-index: 0;
 }
 #services .container {
-	justify-content: space-between;
+	justify-content: space-around;
 	display: flex;
 	padding : 2em 0;
 }
@@ -257,6 +257,7 @@ input[type="submit"] {
 	}
 	.picture {
 		width: 50%;
+		height: auto;
 	}
 	.picture.left::before {
 		width: 100%;
@@ -327,7 +328,7 @@ input[type="submit"] {
 		align-items: center;
 	}
 	.service {
-		max-width: 90%;
+		max-width: 100%;
 	}
 	#about, #contact {
 		padding-inline: 2em;
@@ -335,9 +336,11 @@ input[type="submit"] {
 	}
 	form {
 		width: 100%;
+		height: auto;
 	}
 	.picture {
 		width: 80%;
+		height: auto;
 	}
 }
 
