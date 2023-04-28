@@ -13,7 +13,7 @@
 	font-display: swap;
   }
 body {
-	max-width: 1200px;
+	max-width: 1920px;
 	margin: auto;
 }
 * {
@@ -95,6 +95,7 @@ p{
 	font-weight: 800;
 	font-style: italic;
 	text-align: justify;
+	width: 80%;
 }
 #about-me p {
 	width: 80%;
@@ -155,6 +156,7 @@ p{
 	font-weight: 300;
 	font-size: calc(1.3rem + .6vw);
 	text-align: justify;
+	width: 80%;
 	
 }
 .quote__author {
@@ -253,8 +255,11 @@ input[type="submit"] {
 		margin-top: 0;
 		margin-bottom: 1em;
 	}
-	#about-me h6, #about-me p {
+	#about-me h6, #about-me p, .about-me__introduction {
 		width: 100%;
+	}
+	.quote__text{
+		width: 90%;
 	}
 }
 @media all and (max-width: 1000px) {
@@ -355,6 +360,9 @@ input[type="submit"] {
 	}
 	.services-title{
 		margin-right: 30px;
+	}
+	.quote__text{
+		width: 100%;
 	}
 	
 }
