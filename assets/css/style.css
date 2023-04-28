@@ -20,9 +20,6 @@ body {
 	font-family: 'Inter', sans-serif;
 	font-style: normal;
 }
-p{
-	text-align: justify;
-}
 #header {
 	background-color: white;
 	position: sticky;
@@ -94,13 +91,11 @@ p{
 	font-family: 'Spectral', sans-serif;
 	font-weight: 800;
 	font-style: italic;
-	text-align: justify;
 	width: 80%;
 }
 #about-me p {
 	width: 80%;
 	font-size: 14px;
-	text-align: justify;
 }
 .portfolio-title, .services-title{
 	text-align: center;
@@ -155,7 +150,6 @@ p{
 	font-style: italic;
 	font-weight: 300;
 	font-size: calc(1.3rem + .6vw);
-	text-align: justify;
 	width: 80%;
 	
 }
